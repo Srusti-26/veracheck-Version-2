@@ -8,13 +8,13 @@
 ## Screenshots
 
 ### Dashboard — Live Feed + Results + Trending
-![Dashboard](ss/1.jpeg)
+![Dashboard](ss/3.jpeg)
 
 ### Translation & Verdict Result
 ![Translation](ss/2.jpeg)
 
-### Evidence & Explainability Panel
-![Explainability](ss/3.jpeg)
+### Admin Panel
+![Explainability](ss/1.jpeg)
 
 ---
 
