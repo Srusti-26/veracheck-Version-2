@@ -1,0 +1,6 @@
+version: "3.9"
+# Shortcut: run `docker compose up` from project root
+# Delegates to docker/docker-compose.yml
+
+include:
+  - path: docker/docker-compose.yml

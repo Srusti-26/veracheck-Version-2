@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.env
+*.egg-info/
+dist/
+build/
+
+# ML models cache (large files — download on first run)
+*.bin
+*.safetensors
+*.pt
+*.pth
+~/.cache/huggingface/
+backend/models_cache/
+data/faiss_index.bin
+
+# Node
+node_modules/
+.next/
+out/
+npm-debug.log*
+
+# Env files
+.env.local
+.env.*.local
+backend/.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+backend_log.txt

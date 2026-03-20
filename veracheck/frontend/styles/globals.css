@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --vera-bg: #0a0c10;
+  --vera-panel: #0f1117;
+  --vera-border: #1e2330;
+  --vera-accent: #00e5ff;
+  --vera-green: #00ff88;
+  --vera-red: #ff3366;
+  --vera-yellow: #ffcc00;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--vera-bg);
+  color: #e2e8f0;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #0f1117; }
+::-webkit-scrollbar-thumb { background: #1e2330; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #00e5ff44; }
+
+/* Panel style */
+.vera-panel {
+  background: var(--vera-panel);
+  border: 1px solid var(--vera-border);
+  border-radius: 8px;
+}
+
+/* Accent glow */
+.vera-glow {
+  box-shadow: 0 0 20px #00e5ff22, inset 0 0 20px #00e5ff08;
+}
+
+/* Verdict badges */
+.badge-true { background: #00ff8820; color: #00ff88; border: 1px solid #00ff8840; }
+.badge-false { background: #ff336620; color: #ff3366; border: 1px solid #ff336640; }
+.badge-misleading { background: #ffcc0020; color: #ffcc00; border: 1px solid #ffcc0040; }
+.badge-unverified { background: #71809620; color: #718096; border: 1px solid #71809640; }
+
+/* Stage indicators */
+.stage-1 { color: #00ff88; }
+.stage-2 { color: #00e5ff; }
+.stage-3 { color: #ff9500; }
+
+/* Scanline effect overlay */
+.scanline::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00e5ff22, transparent);
+  animation: scan 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scan {
+  from { top: 0; }
+  to { top: 100%; }
+}
+
+/* Live indicator */
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background: #00ff88;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #00ff88;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* Number counter */
+.counter {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Grid lines */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(30, 35, 48, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 35, 48, 0.5) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
